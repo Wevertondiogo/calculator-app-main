@@ -98,7 +98,8 @@ li {
 }
 
 .screen,
-.keypad {
+.keypad,
+.keypad .keypad-body .btn {
     border-radius: 8px;
 
 }
@@ -126,4 +127,30 @@ li {
     background-color: var(--toggle-background-keypad-background);
 
     height: 40vh;
+
+    padding: 1rem;
+}
+
+.keypad .keypad-body {
+    height: 100%;
+
+}
+
+.keypad .keypad-body .btn {
+    width: 15%;
+    height: 20%;
+
+    background-color: var(--key-background);
+
+    border: none;
+
+    box-shadow: 0 5px 2px var(--key-shadow-orange);
+
+
+}
+
+.keypad .keypad-body .btn:active {
+    position: relative;
+    top: 5px;
+    box-shadow: none;
 }
