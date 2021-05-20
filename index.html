@@ -1,14 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+
+  <link onload="this.onload=null;this.rel='stylesheet'" rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Spartan:wght@700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="src/css/styles.css">
   <title>Frontend Mentor | Calculator app</title>
 </head>
-<body>
 
+<body>
+  <main class="container-calc">
+    <header class="header-calc">
+      <h3 class="title">Calc</h3>
+      <div class="side-left">
+        <h5>theme</h5>
+        <div class="toggle-theme">
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+          </ul>
+          <div class="btn-group">
+            <button class="btn-theme1"></button>
+          </div>
+        </div>
+
+      </div>
+    </header>
+  </main>
 </body>
+
 </html>

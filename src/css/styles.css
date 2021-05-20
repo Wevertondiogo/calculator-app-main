@@ -1,0 +1,94 @@
+@import 'variable.css';
+@import 'reset.css';
+
+body {
+    background-color: var(--main-background);
+
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container-calc {
+    width: 60%;
+    height: 80vh;
+
+
+    padding: 2rem;
+}
+
+.header-calc {
+
+    height: 10%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.side-left {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 40%;
+
+    height: 70px;
+}
+
+h5 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    margin-top: 15px;
+}
+
+.toggle-theme {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 30%;
+}
+
+ul {
+
+    display: flex;
+    flex-direction: row;
+}
+
+ul li:nth-child(2) {
+    margin: 0 1.50rem 0 1.50rem;
+}
+
+li {
+    font-size: .8rem;
+
+    margin-bottom: .1rem;
+}
+
+.btn-group {
+    display: flex;
+    align-items: center;
+
+    width: 80px;
+
+    padding: 4px;
+
+    height: 20px;
+
+    background-color: var(--toggle-background-keypad-background);
+
+    border-radius: 20px;
+}
+
+.btn-theme1 {
+    width: 25%;
+    height: 100%;
+    border-radius: 50%;
+
+    border: none;
+
+    background-color: var(--key-background-toggle);
+}
