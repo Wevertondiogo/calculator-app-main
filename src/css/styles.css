@@ -11,6 +11,7 @@ body {
 
 }
 
+
 .container-calc {
     width: 60%;
     height: 80vh;
@@ -32,24 +33,28 @@ body {
 .side-left {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    width: 40%;
+    justify-content: space-around;
+    width: 30%;
 
     height: 70px;
 }
 
-h5 {
+span {
     text-transform: uppercase;
     letter-spacing: 2px;
 
     margin-top: 15px;
+
+    font-size: 13px;
 }
 
 .toggle-theme {
     display: flex;
     align-items: center;
     flex-direction: column;
-    width: 30%;
+    width: 35%;
+
+    margin-right: 4px;
 }
 
 ul {
@@ -73,10 +78,9 @@ li {
     align-items: center;
 
     width: 80px;
+    height: 20px;
 
     padding: 4px;
-
-    height: 20px;
 
     background-color: var(--toggle-background-keypad-background);
 
@@ -91,4 +95,24 @@ li {
     border: none;
 
     background-color: var(--key-background-toggle);
+}
+
+.screen {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 2rem;
+
+    height: 5vh;
+
+    border-radius: 12px;
+
+    background-color: var(--screen-background);
+
+    padding: 3rem;
+
+}
+
+.values {
+    font-size: 2.5rem;
 }
