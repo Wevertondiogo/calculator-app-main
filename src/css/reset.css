@@ -5,7 +5,8 @@ button {
 h1,
 h2,
 span,
-ul {
+ul,
+button {
     margin: 0;
     padding: 0;
 

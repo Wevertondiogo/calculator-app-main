@@ -14,7 +14,8 @@ body {
 
 .container-calc {
     width: 60%;
-    height: 80vh;
+    height: 100vh;
+
 
 
     padding: 2rem;
@@ -41,7 +42,7 @@ body {
 
 span {
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
 
     margin-top: 15px;
 
@@ -99,7 +100,7 @@ li {
 
 .screen,
 .keypad,
-.keypad .keypad-body .btn {
+.keypad .btn {
     border-radius: 8px;
 
 }
@@ -126,31 +127,62 @@ li {
     margin-top: 1.5rem;
     background-color: var(--toggle-background-keypad-background);
 
-    height: 40vh;
-
-    padding: 1rem;
+    padding: 2.2rem;
 }
 
 .keypad .keypad-body {
-    height: 100%;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
 
 }
 
-.keypad .keypad-body .btn {
-    width: 15%;
-    height: 20%;
+.keypad .btn {
 
     background-color: var(--key-background);
 
+
     border: none;
 
-    box-shadow: 0 5px 2px var(--key-shadow-orange);
+    box-shadow: 0 3px 2px var(--key-shadow-orange);
 
+    color: var(--very-dark-grayish-blue);
+
+    font-size: 1.2rem;
+    font-family: 'Spartan', 'sans-serif';
+
+    text-transform: uppercase;
+
+    min-height: 50px;
+
+    padding: 5px;
 
 }
 
-.keypad .keypad-body .btn:active {
+.btn.dark-blue {
+
+    background-color: var(--key-background-dark-blue);
+    box-shadow: 0 3px 2px var(--key-shadow-dark-blue);
+    color: var(--white);
+}
+
+.btn.red {
+    background-color: var(--key-background-toggle);
+    box-shadow: 0 3px 2px var(--key-shadow-dark-red);
+    color: var(--white);
+}
+
+.keypad .btn:active {
     position: relative;
     top: 5px;
     box-shadow: none;
+}
+
+.keypad .keypad-footer {
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+
 }
