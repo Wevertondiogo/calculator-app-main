@@ -18,11 +18,12 @@ function setValuesInElements(props) {
     const convertToNumber = Number(props);
 
     if ((!isNaN(convertToNumber) || props === '.') && !operator.innerText && !value2.innerText) {
-        value1.innerText += props;
+        value1.innerText += props
+
     } else if (isNaN(convertToNumber) && value1.innerText) operator.innerText += props;
 
-    else if (!isNaN(convertToNumber) && operator.innerText) {
-        value2.innerText += convertToNumber;
+    else if (!isNaN(convertToNumber) || props === '.' && operator.innerText) {
+        value2.innerText += props;
     }
 }
 
@@ -56,7 +57,7 @@ function calc() {
     value2.innerText = '';
     operator.innerText = '';
 
-    if (result) value1.innerText = parseFloat(result).toLocaleString();
+    if (result) value1.innerText = result.toLocaleString();
 
 }
 
