@@ -1,35 +1,79 @@
+// Elements
 const buttons = document.querySelectorAll('.btn');
-const values = document.querySelector('.values');
+const value1 = document.querySelector('.value1');
+const value2 = document.querySelector('.value2');
+const operator = document.querySelector('.operator');
+const seeResult = document.querySelector('#seeResult');
+const btnReset = document.querySelector("#btnReset");
 
-const KEY_VALUE = "value";
-const KEY_OPERATOR = "operator"
+
+
+let result;
+
+
+function setValuesInElements(props) {
+    const convertToNumber = Number(props);
+
+    if (!isNaN(convertToNumber) && !operator.innerText && !value2.innerText) {
+        value1.innerText += convertToNumber;
+    } else if (isNaN(convertToNumber) && value1.innerText) operator.innerText += props;
+
+    if (!isNaN(convertToNumber) && operator.innerText) {
+        value2.innerText += convertToNumber;
+    }
+}
+
+
+function calc() {
+
+    const convertValue1 = parseFloat(value1.innerText);
+    const convertValue2 = parseFloat(value2.innerText);
+
+
+    switch (operator.innerText) {
+        case '+':
+            result = convertValue1 + convertValue2;
+            break;
+
+        case '-':
+            result = convertValue1 - convertValue2;
+            break;
+
+        case '/':
+            result = convertValue1 / convertValue2;
+            break;
+
+        case 'X':
+            result = convertValue1 * convertValue2;
+            break;
+
+
+    }
+
+    value2.innerText = '';
+    operator.innerText = '';
+
+    if (result) value1.innerText = result;
+
+}
+
+function reset() {
+    value1.innerText = '';
+    value2.innerText = '';
+    operator.innerText = '';
+}
+
 
 buttons.forEach(btn => {
     btn.addEventListener('click', event => {
+        const valueInnerText = event.target.innerText
 
-        const convertForNumber = Number(event.target.innerText);
-
-        if (isNaN(convertForNumber)) {
-            localStorage.setItem(KEY_OPERATOR, event.target.innerText);
-        } else localStorage.setItem(KEY_VALUE, convertForNumber);
-
-        //const arrayValues = Array.from(values.innerText)
-
-        if (getValue() && !getOperator()) {
-            values.textContent += getValue();
-        } else if (getValue() && getOperator()) {
-            values.textContent += getOperator();
-            localStorage.removeItem(KEY_OPERATOR)
+        if (valueInnerText !== "=" && valueInnerText !== "DEL" && valueInnerText !== "RESET") {
+            setValuesInElements(valueInnerText);
         }
-
-
-        //getLastValueOfArray(arrayValues)
 
     })
 })
 
-const getValue = () => localStorage.getItem(KEY_VALUE);
-
-const getOperator = () => localStorage.getItem(KEY_OPERATOR);
-
-const getLastValueOfArray = array => Number(array[array.length - 1])
+seeResult.addEventListener('click', calc)
+btnReset.addEventListener('click', reset)
